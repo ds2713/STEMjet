@@ -1,26 +1,36 @@
 """
 A simple example of an animated plot
 """
-import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+import numpy as np
 
-fig, ax = plt.subplots()
+fig = plt.figure()
+ax1 = fig.add_subplot(1,1,1)
 
-x = np.arange(0, 2*np.pi, 0.01)
-line, = ax.plot(x, np.sin(x))
+#xar = [0]*10
+
+t = np.arange(0, 6, 0.1)
+
+s0 = np.sin(t)
+s1 = np.sin(2*t)
 
 
 def animate(i):
-    line.set_ydata(np.sin(x + i/10.0))  # update the data
-    return line,
-
-
-# Init only required for blitting to give a clean slate.
-def init():
-    line.set_ydata(np.ma.array(x, mask=True))
-    return line,
-
-ani = animation.FuncAnimation(fig, animate, np.arange(1, 200), init_func=init,
-                              interval=25, blit=True)
+    
+    t = t[1:]
+    t = np.append(t, t[-1]+0.1)
+    s0 = np.sin(t)
+    s1 = np.sin(2*t)
+    
+    plt.plot(t, s0, t, s1)
+    #xar.append(10*np.random.rand(1)[0])
+    #ax1.clear()
+    #ax1.plot(xar)
+    del xar[0]
+    
+    
+ani = animation.FuncAnimation(fig, animate, interval=2)
+#manager = plt.get_current_fig_manager()
+#manager.resize(*manager.window.maxsize())
 plt.show()

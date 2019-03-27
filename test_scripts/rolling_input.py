@@ -15,7 +15,8 @@ def animate(i):
     ax1.plot(xar)
     ax1.set_ylim([0,10])
     del xar[0]
+    
 ani = animation.FuncAnimation(fig, animate, interval=10)
-manager = plt.get_current_fig_manager()
-manager.resize(*manager.window.maxsize())
+#manager = plt.get_current_fig_manager()
+#manager.resize(*manager.window.maxsize())
 plt.show()
