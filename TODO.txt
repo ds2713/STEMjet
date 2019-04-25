@@ -1,0 +1,29 @@
+/* 
+
+Model improvements:
+* Improve WFE - base on NHRT and include NHdot correction to mimic transient fuelflow
+* change model timestep to decouple from realtime
+* check Potentiometer to PLD calc
+
+text improvements:
+- delete key - working
+- stop deleted past 0 crashing text input - working
+
+licensing:
+* license
+
+IO Improvements:
+- test button - working
+- check PWM - working
+- check LED - working
+- check ignition - working
+
+* Motor Checks
+* Interlocks
+- Interrupt on Pin Change for speed sensing - done
+* full speed sensing code
+* Asynchronous ADC
+* Buffered Serial
+* read P & T
+* asynchronous P & T read
+*/
