@@ -1,0 +1,14 @@
+Linking everything together...
+/opt/arduino-1.8.9/hardware/tools/avr/bin/avr-gcc -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections -mmcu=atmega328p -o /tmp/arduino_build_151256/Giveaway_Engine_Controller.ino.elf /tmp/arduino_build_151256/sketch/GT_IO.cpp.o /tmp/arduino_build_151256/sketch/GT_Model.cpp.o /tmp/arduino_build_151256/sketch/GetCommand.cpp.o /tmp/arduino_build_151256/sketch/Giveaway_Engine_Controller.ino.cpp.o /tmp/arduino_build_151256/sketch/PID.cpp.o /tmp/arduino_build_151256/sketch/Text_Functions.cpp.o /tmp/arduino_build_151256/core/core.a -L/tmp/arduino_build_151256 -lm
+/tmp/ccfdBkkP.ltrans0.ltrans.o: In function `init':
+/tmp/arduino_build_151256/sketch/GT_IO.cpp:37: undefined reference to `ServoTimer2::attach(int)'
+/tmp/arduino_build_151256/sketch/GT_IO.cpp:38: undefined reference to `ServoTimer2::attach(int)'
+/tmp/ccfdBkkP.ltrans0.ltrans.o: In function `setReverser':
+/tmp/arduino_build_151256/sketch/GT_IO.cpp:141: undefined reference to `ServoTimer2::write(int)'
+/tmp/arduino_build_151256/sketch/GT_IO.cpp:142: undefined reference to `ServoTimer2::write(int)'
+/tmp/ccfdBkkP.ltrans3.ltrans.o: In function `__base_ctor ':
+/tmp/arduino_build_151256/sketch/GT_IO.cpp:9: undefined reference to `ServoTimer2::ServoTimer2()'
+/tmp/arduino_build_151256/sketch/GT_IO.cpp:9: undefined reference to `ServoTimer2::ServoTimer2()'
+collect2: error: ld returned 1 exit status
+exit status 1
+Error compiling for board Arduino Nano.
